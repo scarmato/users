@@ -25,8 +25,8 @@ Route.post ("/users", "UsersController.create")
 Route.get ("/users", "UsersController.index")
 Route.get ("/users/:id", "UsersController.getUserByID")
 Route.put ("/users/:id", "UsersController.update") 
-Route.delete ("/users/:id", "UsersController.delete")
-Route.put ("/users/del/:id", "UsersController.deletelog")
+Route.put ("/users/del/:id", "UsersController.delete")
+
 
 
 

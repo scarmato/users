@@ -6,7 +6,7 @@ export default class Statuses extends BaseSchema {
   public async up () {
     this.schema.alterTable('Users', (table) => {
       
-      table.string("status").notNullable().defaultTo(1);
+      table.integer("status").notNullable().defaultTo(1);
       
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
@@ -17,6 +17,10 @@ export default class Statuses extends BaseSchema {
   }
 
   public async down () {
-    this.schema.dropTable(this.tableName)
+    this.schema.alterTable('Users', (table) => {
+      
+      table.dropColumn("status")
+    })
+  
   }
 }

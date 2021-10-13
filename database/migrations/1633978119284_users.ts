@@ -6,8 +6,8 @@ export default class Users extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string("username").notNullable();
-      table.string("name").notNullable();
+      table.integer("username").notNullable();
+      table.integer("name").notNullable();
 
 
       /**
